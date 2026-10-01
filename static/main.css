@@ -1,24 +1,31 @@
 span {
     display: inline-block;
-    padding: 5px;
-}
-/*Added a class called normal-text to remove the font-weight from the h1 tag*/
-span.normal-text {
-    font-weight: normal;
-}
 
-div > span:first-child {
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 10px 0;
+  }
+.left-text {
+    width: 130px;
+    font-weight: bold;
+}
+.right-stacked {
+    display: flex;
+    flex-direction: column;
+}
+  .right-stacked > div > span:first-child {
     width: 160px;
+    padding: 4px 0;
     font-weight: bold;
 }
 
-.container {
-    display: flex;
-    align-items: center; /* Aligns left text and right stack vertically */
-    gap: 20px;           /* Space between left text and right stack */
-  }
+  .right-stacked > div > span:last-child {
+    padding: 4px 0;
+}
 
-  .right-stacked {
-    display: flex;
-    flex-direction: column; /* Stacks the child elements vertically */
-  }
+  hr {
+    margin: 10px 0;
+}
