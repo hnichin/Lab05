@@ -1,11 +1,13 @@
 # Author: Karanjot Singh Kailay, Mukul Kumar, Hmun Cung Hnin Ni Chin
 # Date: 9/30/2026
 # File: payroll.py
-# Description:
+# Description: makes the invoices and employees and gets the totals for the payroll page
+
 from payroll.invoice import Invoice
 from payroll.models import Person, Secretary, Manager, SalesPerson, Employee, ExecutiveManager
 
 
+# works for any payable just calls its to_dict
 def serialize_payroll(payable):
     return payable.to_dict()
 
@@ -76,11 +78,13 @@ def build_payroll_data():
     payable_dictionary = []
     gross_count = 0
 
+# get each ones dict and add up the pay
     for payable in payables:
         data = serialize_payroll(payable)
         payable_dictionary.append(data)
         gross_count += payable.calculate_payment()
 
+# send it all back for flask
     return  {
         "payables": payable_dictionary,
         "invoice_count": Invoice.get_invoice_count(),
