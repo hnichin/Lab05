@@ -10,6 +10,9 @@ def serialize_payroll(payable):
     return payable.to_dict()
 
 def build_payroll_data():
+    # reset the counts so they don't keep adding up on every refresh
+    Employee.employee_count = 0
+    Invoice.invoice_count = 0
     person1 = Person(
         "Alice",
         "Wong",
