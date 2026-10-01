@@ -13,6 +13,8 @@ class Invoice(Payable):
         self.price = price
         self.quantity = quantity
 
+        Invoice.invoice_count += 1
+
     def calculate_payment(self) -> float:
         return self.price * self.quantity
 
