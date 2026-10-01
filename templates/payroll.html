@@ -10,19 +10,56 @@
 <h1> I211 Information Infrastructure II </h1>
 <hr>
 <h2> Designing and Programming a Payroll System with Object-Oriented Principles</h2>
-{% for payable in data %}
+{% for payable in data.payables %}
+<hr>
 <div class="container">
   <div class="left-text">
-    Invoice
+    <b>{{ payable.type }}</b>
   </div>
   <div class="right-stacked">
-    <span>Part Name: {{ payable  }}</span>
-    <span>Quantity: </span>
-    <span>Price: </span>
-    <span>Payment Amount: </span>
+    {% if payable.type == "Invoice" %}
+      <div><span>Part Name:</span><span>{{ payable.part_name }}</span></div>
+      <div><span>Quantity:</span><span>{{ payable.quantity }}</span></div>
+      <div><span>Price:</span><span>{{ payable.price }}</span></div>
+      <div><span>Payment Amount:</span><span>{{ payable.payment_amount }}</span></div>
+    {% else %}
+      <div><span>Employee Id:</span><span>{{ payable.emp_id }}</span></div>
+      <div><span>Name:</span><span>{{ payable.first_name }} {{ payable.last_name }}</span></div>
+      <div><span>Gender:</span><span>{{ payable.gender }}</span></div>
+      <div><span>Social Security Number:</span><span>{{ payable.ssn }}</span></div>
+      <div><span>Years Of Service:</span><span>{{ payable.years_of_service }}</span></div>
+      <div><span>Payment Amount:</span><span>{{ payable.payment }}</span></div>
+    {% endif %}
+
+    {% if payable.type == "Secretary" %}
+      <div><span>Wage:</span><span>{{ payable.wages }}</span></div>
+      <div><span>Hours:</span><span>{{ payable.hours }}</span></div>
+    {% elif payable.type == "Manager" %}
+      <div><span>Department:</span><span>{{ payable.department }}</span></div>
+      <div><span>Salary:</span><span>{{ payable.salary }}</span></div>
+    {% elif payable.type == "ExecutiveManager" %}
+      <div><span>Department:</span><span>{{ payable.department }}</span></div>
+      <div><span>Salary:</span><span>{{ payable.salary }}</span></div>
+      <div><span>Bonus:</span><span>{{ payable.bonus }}</span></div>
+    {% elif payable.type == "SalesPerson" %}
+      <div><span>Sales:</span><span>{{ payable.sales }}</span></div>
+      <div><span>Commission Rate:</span><span>{{ payable.commission_rate }}</span></div>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
+
+<hr>
+<div class="container">
+  <div class="left-text">
+    <b>Summary</b>
+  </div>
+  <div class="right-stacked">
+    <div><span>Total Invoices:</span><span>{{ data.invoice_count }}</span></div>
+    <div><span>Total Employees:</span><span>{{ data.employee_count }}</span></div>
+    <div><span>Total Count:</span><span>{{ data.invoice_count + data.employee_count }}</span></div>
+  </div>
+</div>
 </body>
 
 </html>

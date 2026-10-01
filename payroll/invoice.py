@@ -20,6 +20,7 @@ class Invoice(Payable):
 
     def to_dict(self) -> dict:
         return {
+            'type': self.__class__.__name__,
             'part_name': self.part_name,
             'price': self.price,
             'quantity': self.quantity,

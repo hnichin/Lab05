@@ -34,6 +34,7 @@ class Employee(Payable):
         pass
     def to_dict(self) -> dict:
         return self.person.to_dict() | {
+            'type': type(self).__name__,
             'emp_id': self.emp_id,
             'years_of_service': self.years_of_service,
             'payment': self.calculate_payment()
