@@ -1,4 +1,4 @@
-# Author: Hmun Cung Hnin Nichin
+# Author: Karanjot Singh Kailay, Mukul Kumar, Hmun Cung Hnin Ni Chin
 # Date: 9/30/2026
 # File: payroll.py
 # Description:
