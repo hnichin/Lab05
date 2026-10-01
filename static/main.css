@@ -1,0 +1,24 @@
+span {
+    display: inline-block;
+    padding: 5px;
+}
+/*Added a class called normal-text to remove the font-weight from the h1 tag*/
+span.normal-text {
+    font-weight: normal;
+}
+
+div > span:first-child {
+    width: 160px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Aligns left text and right stack vertically */
+    gap: 20px;           /* Space between left text and right stack */
+  }
+
+  .right-stacked {
+    display: flex;
+    flex-direction: column; /* Stacks the child elements vertically */
+  }
