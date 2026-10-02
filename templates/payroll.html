@@ -1,3 +1,5 @@
+<!--Mukul Kumar - 10/1/2026-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +59,8 @@
   <div class="right-stacked">
     <div><span>Total Invoices:</span><span>{{ data.invoice_count }}</span></div>
     <div><span>Total Employees:</span><span>{{ data.employee_count }}</span></div>
-    <div><span>Total Count:</span><span>{{ data.invoice_count + data.employee_count }}</span></div>
+        <div><span>Total Count:</span><span>{{ data.invoice_count + data.employee_count }}</span></div>
+    <div><span>Total Gross:</span><span>${{ "{:,.2f}".format(data.total_gross) }}</span></div>
   </div>
 </div>
 </body>

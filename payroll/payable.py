@@ -1,6 +1,6 @@
-# Author: Hmun Cung Hnin Nichin
+# Author: Karanjot Singh Kailay
 # Date: 9/30/2026
-# File: payable.py
+# Name: payable.py
 # Description: Define the abstract Payable class
 from abc import ABC, abstractmethod
 

@@ -1,6 +1,6 @@
-# Author: Hmun Cung Hnin Nichin
+# Author: Karanjot Singh Kailay
 # Date: 9/30/2026
-# File: invoice.py
+# Name: invoice.py
 # Description: Define invoice class
 from payroll.payable import Payable
 

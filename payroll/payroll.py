@@ -1,6 +1,6 @@
-# Author: Karanjot Singh Kailay, Mukul Kumar, Hmun Cung Hnin Ni Chin
+# Author: Hmun Cung Hnin Ni Chin
 # Date: 9/30/2026
-# File: payroll.py
+# Name: payroll.py
 # Description: makes the invoices and employees and gets the totals for the payroll page
 
 from payroll.invoice import Invoice

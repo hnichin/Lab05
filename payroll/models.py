@@ -1,7 +1,7 @@
-# Author: Hmun Cung Hnin Nichin
+# Author: Hmun Cung Hnin Ni Chin
 # Date: 9/30/2026
-# File: models.py
-# Description:
+# Name: models.py
+# Description: has the person class plus employee and all the employee types, each one does its own pay
 from payroll.payable import Payable
 from abc import abstractmethod
 class Person:
@@ -19,7 +19,7 @@ class Person:
             'ssn': self.ssn
         }
 
-
+# abstract, every employee has a person
 class Employee(Payable):
     #Class Attribute
     employee_count = 0
@@ -39,6 +39,8 @@ class Employee(Payable):
             'years_of_service': self.years_of_service,
             'payment': self.calculate_payment()
         }
+
+    # class method so we can get the count without an object
     @classmethod
     def get_employee_count(cls) -> int:
         return cls.employee_count
@@ -100,9 +102,7 @@ class ExecutiveManager(Manager):
         super().__init__(person, emp_id, years_of_service,department, salary)
         self.bonus = bonus
 
-    def calculate_payment(self):
-        print("salary:", self.salary, type(self.salary))
-        print("bonus:", self.bonus, type(self.bonus))
+    def calculate_payment(self) -> float:
         return self.salary + self.bonus
 
     def to_dict(self) -> dict:
