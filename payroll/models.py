@@ -29,9 +29,11 @@ class Employee(Payable):
         self.years_of_service = years_of_service
 
         Employee.employee_count += 1
+
     @abstractmethod
     def calculate_payment(self) -> float:
         pass
+
     def to_dict(self) -> dict:
         return self.person.to_dict() | {
             'type': type(self).__name__,
